@@ -1,15 +1,17 @@
 <script>
     import {writable} from 'svelte/store'
-    import {courses, setCourse} from '$lib/courseStore.js'
+    import {courses} from '$lib/courseStore.js'
 
-    $: console.log($courses)
+    // $: console.log($courses)
 
     let coursename = ''
-    let courseID = 0
+    // let courseID = 0
     let message = ''
 
-    function addCourse(){
-        courses.update(existingCourses => [...existingCourses, coursename])
+    function saveCourse(){
+        let course = {id: courses.length, name: coursename}
+
+        courses.add(course)
         message = `${coursename} lisätty ID:llä ${courseID}`
         coursename = ''
         courseID = 0
@@ -18,8 +20,8 @@
 
 <div class="ui input">
     <input type="text" bind:value={coursename} placeholder="Opintojakson nimi">
-    <input type="number" bind:value={courseID} placeholder="Opintojakson ID">
-    <button class="ui button" on:click={addCourse}>Lisää opintojakso</button>
+    <!-- <input type="number" bind:value={courseID} placeholder="Opintojakson ID"> -->
+    <button class="ui button" on:click={saveCourse}>Lisää opintojakso</button>
 </div>
 
 {#if message}

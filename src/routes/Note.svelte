@@ -1,18 +1,20 @@
 <script>
     import {onMount} from 'svelte'
-    import {setCourse} from '$lib/courseStore.js'
-    import {courses} from '$lib/courseStore.js'
+    import {courses, setCourse} from '$lib/courseStore.js'
     import {addNote} from '$lib/noteStore.js'
-    import {writable} from 'svelte/store';
+    import {writable} from 'svelte/store'
     
-    $: console.log($courses)
+    // $: console.log($courses)
 
     let selectedCourse = ''
     let noteText = ''
 
     // Opintojakson valinta
     onMount(() => {
-        setCourse(selectedCourse)
+        // setCourse(selectedCourse)
+        if ($courses.length > 0) {
+            selectedCourse = $courses[0].name
+        }
     })
 
     //Muistiinpanon tallennus
@@ -30,8 +32,8 @@
 
 <div class="selection">
     <select class="ui selection dropdown" bind:value={selectedCourse}>
-        {#each $courses as courseOption}
-            <option value={courseOption}>{courseOption}</option>
+        {#each $courses as courseOption (courseOption.id)}
+            <option value={courseOption.name}>{courseOption.name}</option>
         {/each}
     </select>
     <button class="ui button" on:click={() => setCourse(selectedCourse)}>

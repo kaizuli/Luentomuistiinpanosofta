@@ -1,16 +1,16 @@
 import { writable } from "svelte/store";
 
-const courses = writable(['Frontend', 'Python', 'Tietokannat'])
+const courses = writable([
+    {id:0, name:'Frontend'},
+    {id:1, name:'Python'},
+    {id:2, name:'Tietokannat'}
+])
 
 const setCourse = (selectedCourse) => {
     courses.set(selectedCourse)
 }
 
 function createCourses() {
-    let frontend = {id:0, name:'Frontend'}
-    let python = {id:1, name:'Python'}
-    let tietokannat = {id:2, name:'Tietokannat'}
-    let og_courses = [frontend, python, tietokannat]
 
     const {subscribe, set, update} = writable(og_courses)
 
