@@ -1,10 +1,16 @@
 <script>
+    import {writable} from 'svelte/store'
+    import {courses, setCourse} from '$lib/courseStore.js'
+
+    $: console.log($courses)
+
     let coursename = ''
     let courseID = 0
     let message = ''
 
     function addCourse(){
-        message = "${coursename} lisätty ID:llä ${courseID}"
+        courses.update(existingCourses => [...existingCourses, coursename])
+        message = `${coursename} lisätty ID:llä ${courseID}`
         coursename = ''
         courseID = 0
     }
@@ -15,6 +21,15 @@
     <input type="number" bind:value={courseID} placeholder="Opintojakson ID">
     <button class="ui button" on:click={addCourse}>Lisää opintojakso</button>
 </div>
+
+{#if message}
+    <div class="ui success message">
+        <i class="close icon"></i>
+        <div class="header">
+        {message}
+        </div>
+    </div>
+{/if}
 
 <style>
     @import 'semantic-ui-css/semantic.min.css';

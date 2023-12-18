@@ -6,6 +6,6 @@
 </script>
 
 <Header />
-<Main />
-<Note />
-<CourseAdd />
+
+
+<slot />
