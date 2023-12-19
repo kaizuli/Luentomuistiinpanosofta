@@ -12,7 +12,7 @@ const setCourse = (selectedCourse) => {
 
 function createCourses() {
 
-    const {subscribe, set, update} = writable(og_courses)
+    const {subscribe, set, update} = writable([])
 
     const addCourse = (course) => {
         update((courses) => {
@@ -29,3 +29,4 @@ function createCourses() {
 }
 
 export {courses, setCourse}
+// export const courses = createCourses()

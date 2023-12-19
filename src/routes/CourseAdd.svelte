@@ -9,12 +9,13 @@
     let message = ''
 
     function saveCourse(){
-        let course = {id: courses.length, name: coursename}
+        let id = $courses.length
+        let course = {id, name: coursename}
 
         courses.add(course)
-        message = `${coursename} lisätty ID:llä ${courseID}`
+        message = `${coursename} lisätty ID:llä ${id}`
         coursename = ''
-        courseID = 0
+        console.log($courses)
     }
 </script>
 

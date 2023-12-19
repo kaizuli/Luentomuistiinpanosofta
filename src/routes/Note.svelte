@@ -1,7 +1,7 @@
 <script>
     import {onMount} from 'svelte'
     import {courses, setCourse} from '$lib/courseStore.js'
-    import {addNote} from '$lib/noteStore.js'
+    import {notes} from '$lib/noteStore.js'
     import {writable} from 'svelte/store'
     
     // $: console.log($courses)
@@ -17,17 +17,26 @@
         }
     })
 
+    
     //Muistiinpanon tallennus
     function saveNote() {
-        if (selectedCourse) {
+        if (selectedCourse && noteText.length > 0) {
             const currentTime = new Date().toISOString()
-            addNote({
-                course: selectedCourse,
-                noteText,
-                datetime: currentTime
-            })
+            let id = $notes.length
+            let datetime = currentTime
+            let note = {id, notetext:noteText, datetime, course:selectedCourse}
+            // addNote({
+            //     id = notes.length
+            //     course: selectedCourse,
+            //     noteText,
+            //     datetime: currentTime
+            // })
+            notes.add(note)
+            console.log('Note saved:', note)
+            console.log($notes)
         }
     }
+
 </script>
 
 <div class="selection">
@@ -43,9 +52,6 @@
 <div class="ui form">
     <h3 class="ui header">{selectedCourse}</h3>
     <div class="field">
-        <div class="ui input">
-            <input type="text" placeholder="Otsikko">
-        </div>
         <textarea rows="16" placeholder="Muistiinpanosi" bind:value={noteText}></textarea>
     </div>
     
