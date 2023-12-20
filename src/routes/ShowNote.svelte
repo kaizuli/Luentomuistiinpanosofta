@@ -14,9 +14,9 @@
 
 <div class="ui message">
     <button class="close icon" on:click={handleRemoveNote}>Poista</button>
-    <div class="header">{course} ID: {id}</div>
-    <p>{notetext}</p>
-    <p>{datetime}</p>
+    <div class="header">{note.course} ID: {note.id}</div>
+    <p>{note.notetext}</p>
+    <p>{note.datetime}</p>
 </div>
 
 <style>
