@@ -13,17 +13,12 @@ import {writable} from 'svelte/store'
 // export {addNote, notes}
 
 function createNotes() {
-    let note = {
-        id: 0,
-        notetext: 'tekstiä',
-        datetime: Date,
-        course: {id:0, name:'Frontend'}
-    }
     const {subscribe, set, update} = writable([])
 
     return {
         subscribe,
         add: (note) => update((notes) => [...notes, note]),
+        remove: (id) => update((notes) => notes.filter((note) => note.id !== id)),
         reset: () => set([])
     }
 }
