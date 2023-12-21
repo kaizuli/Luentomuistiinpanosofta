@@ -19,7 +19,8 @@ function createNotes() {
         subscribe,
         add: (note) => update((notes) => [...notes, note]),
         remove: (id) => update((notes) => notes.filter((note) => note.id !== id)),
-        reset: () => set([])
+        reset: () => set([]),
+        populate: (notes) => set(notes)
     }
 }
 

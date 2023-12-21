@@ -3,9 +3,9 @@
 
     export let note
 
-    const {id, notetext, datetime, course } = note
+    const {id, notetext, course, datetime } = note
 
-    const dispatch = createEventDispatcher()
+    // const dispatch = createEventDispatcher()
 
     function handleRemoveNote() {
         dispatch('removeNote', { id: note.id })
