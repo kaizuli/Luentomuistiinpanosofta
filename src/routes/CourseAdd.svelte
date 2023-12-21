@@ -1,13 +1,15 @@
 <script>
     import {writable} from 'svelte/store'
     import {courses} from '$lib/courseStore.js'
-
-    // $: console.log($courses)
+    import { onMount } from 'svelte'
+    // import {$courses} from '$layout'
 
     let coursename = ''
     // let courseID = 0
     let message = ''
+    let fetchedCourses
 
+    //Kurssin lisääminen
     function saveCourse(){
         let id = $courses.length
         let course = {id, name: coursename}
@@ -17,6 +19,14 @@
         coursename = ''
         console.log($courses)
     }
+
+    //Kurssien tuominen
+    // onMount(() => {
+    //     fetchedCourses = $page.courses
+    //     console.log('Courses from $page:', fetchedCourses)
+
+    //     courses.add(fetchedCourses)
+    // })
 </script>
 
 <div class="ui input">

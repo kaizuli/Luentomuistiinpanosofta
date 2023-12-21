@@ -6,17 +6,17 @@
 
     
     // export let course
-
+    console.log($courses)
     let selectedCourse = ''
     let noteText = ''
 
     // Opintojakson valinta
-    onMount(() => {
-        // setCourse(selectedCourse)
-        if ($courses.length > 0) {
-            selectedCourse = $courses[0].name
-        }
-    })
+    // onMount(() => {
+    //     // setCourse(selectedCourse)
+    //     if ($courses.length > 0) {
+    //         selectedCourse = $courses[0].name
+    //     }
+    // })
 
     
     //Muistiinpanon tallennus
@@ -38,6 +38,7 @@
 
 </script>
 
+<!-- <a href="/"></a> -->
 <div class="selection">
     <select class="ui selection dropdown" bind:value={selectedCourse}>
         {#each $courses as courseOption (courseOption.id)}

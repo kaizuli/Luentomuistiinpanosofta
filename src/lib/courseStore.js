@@ -1,14 +1,8 @@
 import { writable } from "svelte/store";
 
-// const courses = writable([
-//     {id:0, name:'Frontend'},
-//     {id:1, name:'Python'},
-//     {id:2, name:'Tietokannat'}
-// ])
-
-const setCourse = (selectedCourse) => {
-    courses.set(selectedCourse)
-}
+// const setCourse = (selectedCourse) => {
+//     courses.set(selectedCourse)
+// }
 
 function createCourses() {
     const {subscribe, set, update} = writable([])
@@ -19,14 +13,17 @@ function createCourses() {
     //         return [...courses, {id, ...course}]
     //     })
     // }
-
+    
     return {
         subscribe,
-        add: (course) => update((courses) => [...courses, course]),
-        reset: () => set([])
+        add: (course) => update((existingCourses) => [...existingCourses, course]),
+        reset: () => set([]),
+        populate: (courses) => set(courses) 
     }
-    console.log('Course created:', courses)
 }
 
+// export function addFetchedCourses(fetchedCourses) {
+//     courseStore.
+// }
 // export {courses, setCourse}
 export const courses = createCourses()
