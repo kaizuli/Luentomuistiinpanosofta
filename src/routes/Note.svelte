@@ -1,10 +1,11 @@
 <script>
     import {onMount} from 'svelte'
-    import {courses, setCourse} from '$lib/courseStore.js'
+    import {courses} from '$lib/courseStore.js'
     import {notes} from '$lib/noteStore.js'
     import {writable} from 'svelte/store'
+
     
-    // $: console.log($courses)
+    // export let course
 
     let selectedCourse = ''
     let noteText = ''
@@ -32,8 +33,6 @@
             //     datetime: currentTime
             // })
             notes.add(note)
-            console.log('Note saved:', note)
-            console.log($notes)
         }
     }
 

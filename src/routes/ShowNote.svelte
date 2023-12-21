@@ -12,6 +12,7 @@
     }
 </script>
 
+<h1 class="ui header">Kirjoittamasi muistiinpanot:</h1>
 <div class="ui message">
     <button class="close icon" on:click={handleRemoveNote}>Poista</button>
     <div class="header">{note.course} ID: {note.id}</div>
