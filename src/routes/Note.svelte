@@ -25,7 +25,12 @@
             const currentTime = new Date().toISOString()
             let id = $notes.length
             let datetime = currentTime
-            let note = {id, notetext:noteText, datetime, course:selectedCourse}
+            const note = {
+                id,
+                text: noteText,
+                course: selectedCourse,
+                timestamp: datetime 
+            }
             // addNote({
             //     id = notes.length
             //     course: selectedCourse,
@@ -33,6 +38,8 @@
             //     datetime: currentTime
             // })
             notes.add(note)
+            console.log('Note saved:', note)
+            console.log($notes)
         }
     }
 
@@ -42,7 +49,7 @@
 <div class="selection">
     <select class="ui selection dropdown" bind:value={selectedCourse}>
         {#each $courses as courseOption (courseOption.id)}
-            <option value={courseOption.name}>{courseOption.name}</option>
+            <option value={courseOption}>{courseOption.name}</option>
         {/each}
     </select>
     <button class="ui button" on:click={() => setCourse(selectedCourse)}>
@@ -50,7 +57,7 @@
     </button>
 </div>
 <div class="ui form">
-    <h3 class="ui header">{selectedCourse}</h3>
+    <h3 class="ui header">{selectedCourse.name}</h3>
     <div class="field">
         <textarea rows="16" placeholder="Muistiinpanosi" bind:value={noteText}></textarea>
     </div>

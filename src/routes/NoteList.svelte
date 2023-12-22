@@ -8,7 +8,7 @@
     }
 </script>
 
-
+<h1 class="ui header">Kirjoittamasi muistiinpanot:</h1>
 {#if $notes.length > 0}
     {#each $notes as note}
         <ShowNote {note} on:removeNote={handleRemoveNote} />

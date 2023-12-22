@@ -3,7 +3,7 @@
 
     export let note
 
-    const {id, notetext, course, datetime } = note
+    const {id, text, course, timestamp } = note
 
     // const dispatch = createEventDispatcher()
 
@@ -12,12 +12,12 @@
     }
 </script>
 
-<h1 class="ui header">Kirjoittamasi muistiinpanot:</h1>
+
 <div class="ui message">
     <button class="close icon" on:click={handleRemoveNote}>Poista</button>
-    <div class="header">{note.course} ID: {note.id}</div>
-    <p>{note.notetext}</p>
-    <p>{note.datetime}</p>
+    <div class="header">{course.name} ID: {note.id}</div>
+    <p>{note.text}</p>
+    <p>{note.timestamp}</p>
 </div>
 
 <style>
