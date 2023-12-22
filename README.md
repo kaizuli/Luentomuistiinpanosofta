@@ -7,8 +7,9 @@ Tällä ohjelmalla voit tallettaa luentomuistiinpanoja.
 Tarvitset Node.js ja npm, jotta voit ajaa tätä ohjelmaa. Kloonaa tämä repositorio ja asenna npm riippuvuudet komennolla:
 ```bash
 npm install
-
-#Käynnistä serveri
+```
+Käynnistä serveri testaustilassa komennolla:
+```bash
 npm run dev
 ```
 Mene selaimessa promptin osoittamaan osoitteeseen ja ala testaamaan!
