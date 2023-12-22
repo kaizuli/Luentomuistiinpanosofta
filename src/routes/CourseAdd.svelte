@@ -1,13 +1,8 @@
 <script>
-    import {writable} from 'svelte/store'
     import {courses} from '$lib/courseStore.js'
-    import { onMount } from 'svelte'
-    // import {$courses} from '$layout'
 
     let coursename = ''
-    // let courseID = 0
     let message = ''
-    let fetchedCourses
 
     //Kurssin lisääminen
     function saveCourse(){
@@ -20,21 +15,14 @@
         console.log($courses)
     }
 
-    //Kurssien tuominen
-    // onMount(() => {
-    //     fetchedCourses = $page.courses
-    //     console.log('Courses from $page:', fetchedCourses)
-
-    //     courses.add(fetchedCourses)
-    // })
 </script>
 
 <div class="ui input">
     <input type="text" bind:value={coursename} placeholder="Opintojakson nimi">
-    <!-- <input type="number" bind:value={courseID} placeholder="Opintojakson ID"> -->
     <button class="ui button" on:click={saveCourse}>Lisää opintojakso</button>
 </div>
 
+<!-- Viesti onnistumisesta -->
 {#if message}
     <div class="ui success message">
         <i class="close icon"></i>

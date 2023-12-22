@@ -8,7 +8,6 @@ export async function load({fetch}) {
         const coursesData = await coursesRes.json()
         console.log('Feetch:',coursesData)
         courses.populate(coursesData)
-        // return { courses: data }
         //Fetch notes
         const notesRes = await fetch('https://luentomuistiinpano-api.netlify.app/.netlify/functions/notes')
         const notesData = await notesRes.json()

@@ -1,38 +1,26 @@
-# create-svelte
+# Luentomuistiinpanosofta
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Tällä ohjelmalla voit tallettaa luentomuistiinpanoja.
 
-## Creating a project
+## Ohjelman käynnistys
 
-If you're seeing this, you've probably already done this step. Congrats!
-
+Tarvitset Node.js ja npm, jotta voit ajaa tätä ohjelmaa. Kloonaa tämä repositorio ja asenna npm riippuvuudet komennolla:
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
+npm install
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
+#Käynnistä serveri
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
+Mene selaimessa promptin osoittamaan osoitteeseen ja ala testaamaan!
 
-## Building
+## Kirjoita muistiinpanoja
 
-To create a production version of your app:
+Tällä välilehdellä valitset pudotusvalikosta opintojakson, johon muistiinpano tallennetaan. Kirjoita sitten muistiinpanosi ja tallenna alhaalta löytyvästä painikkeesta.
 
-```bash
-npm run build
-```
+## Näytä
 
-You can preview the production build with `npm run preview`.
+Tällä välilehdellä listataan kirjoittamasi muistiinpanot.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Lisää opintojakso
+
+Kirjoita opintojakson nimi ja paina painiketta lisätäksesi se opintojaksoihin. Tallennetut opintojaksot ilmestyvät valittavaksi muistiinpanojen kirjoittamista varten.

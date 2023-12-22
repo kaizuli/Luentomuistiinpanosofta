@@ -1,18 +1,15 @@
 <script>
-    import { createEventDispatcher } from "svelte";
-
     export let note
 
     const {id, text, course, timestamp } = note
 
-    // const dispatch = createEventDispatcher()
-
+//Yksittäisen muistiinpanon poistaminen
     function handleRemoveNote() {
         dispatch('removeNote', { id: note.id })
     }
 </script>
 
-
+<!-- Muistiinpanojen listaus -->
 <div class="ui message">
     <button class="close icon" on:click={handleRemoveNote}>Poista</button>
     <div class="header">{course.name} ID: {note.id}</div>

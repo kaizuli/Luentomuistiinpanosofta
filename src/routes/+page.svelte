@@ -1,7 +1,5 @@
 <script>
-    import Main from "./Main.svelte"
-    export let data
+    import { Main } from './Main.svelte'
 </script>
 
-{JSON.stringify(data, null, 2)}
 <Main />

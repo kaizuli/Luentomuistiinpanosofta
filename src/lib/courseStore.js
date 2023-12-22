@@ -6,13 +6,6 @@ import { writable } from "svelte/store";
 
 function createCourses() {
     const {subscribe, set, update} = writable([])
-
-    // const addCourse = (course) => {
-    //     update((courses) => {
-    //         let id = courses.length
-    //         return [...courses, {id, ...course}]
-    //     })
-    // }
     
     return {
         subscribe,
@@ -22,8 +15,5 @@ function createCourses() {
     }
 }
 
-// export function addFetchedCourses(fetchedCourses) {
-//     courseStore.
-// }
 // export {courses, setCourse}
 export const courses = createCourses()

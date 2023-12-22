@@ -1,10 +1,3 @@
-<script>
-    import Main from "./main.svelte"
-    import Note from "./Note.svelte"
-    import NoteList from "./NoteList.svelte"
-    import CourseAdd from "./CourseAdd.svelte"
-</script>
-
 <div class="ui four item menu">
     <a class="item" href="/">Etusivu</a>
     <a class="item" href="/addnote">Kirjoita muistiinpanoja</a>

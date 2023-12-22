@@ -4,7 +4,6 @@
     import {notes} from '$lib/noteStore.js'
     import {writable} from 'svelte/store'
 
-    
     // export let course
     console.log($courses)
     let selectedCourse = ''
@@ -31,12 +30,6 @@
                 course: selectedCourse,
                 timestamp: datetime 
             }
-            // addNote({
-            //     id = notes.length
-            //     course: selectedCourse,
-            //     noteText,
-            //     datetime: currentTime
-            // })
             notes.add(note)
             console.log('Note saved:', note)
             console.log($notes)
@@ -45,7 +38,7 @@
 
 </script>
 
-<!-- <a href="/"></a> -->
+<!-- Opintojakson valinta -->
 <div class="selection">
     <select class="ui selection dropdown" bind:value={selectedCourse}>
         {#each $courses as courseOption (courseOption.id)}
@@ -56,6 +49,7 @@
         Valitse
     </button>
 </div>
+<!-- Muistiinpanon kirjoitus -->
 <div class="ui form">
     <h3 class="ui header">{selectedCourse.name}</h3>
     <div class="field">
