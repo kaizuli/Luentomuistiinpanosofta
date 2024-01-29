@@ -1,9 +1,12 @@
 <script>
+    import { createEventDispatcher } from 'svelte'
     export let note
 
     const {id, text, course, timestamp } = note
 
 //Yksittäisen muistiinpanon poistaminen
+    const dispatch = createEventDispatcher()
+
     function handleRemoveNote() {
         dispatch('removeNote', { id: note.id })
     }

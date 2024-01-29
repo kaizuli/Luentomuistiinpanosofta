@@ -1,5 +1,1 @@
-<script>
-    import { Main } from './Main.svelte'
-</script>
-
-<Main />
+<p>Tällä ohjelmalla voit kirjoittaa muistiinpanoja haluamaasi opintojaksoon.</p>

@@ -1,1 +1,0 @@
-<p>Tällä ohjelmalla voit kirjoittaa muistiinpanoja haluamaasi opintojaksoon.</p>

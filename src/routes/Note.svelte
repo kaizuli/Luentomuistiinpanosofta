@@ -22,7 +22,10 @@
     function saveNote() {
         if (selectedCourse && noteText.length > 0) {
             const currentTime = new Date().toISOString()
-            let id = $notes.length
+            let id = Math.floor(Math.random() * 1000000)
+            while ($notes.some(note => note.id === id)) {
+                id = Math.floor(Math.random() * 1000000);
+            }
             let datetime = currentTime
             const note = {
                 id,
